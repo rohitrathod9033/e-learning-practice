@@ -8,8 +8,4 @@ const connectCloudinary = async () => {
   });
 };
 
-<<<<<<< HEAD
 export default connectCloudinary;
-=======
-export default connectCloudinary;
->>>>>>> da93f25 (add)

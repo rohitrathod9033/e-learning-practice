@@ -1,13 +1,10 @@
 // controllers/webhooks.js
 import Stripe from "stripe";
 import User from "../models/User.js";
-<<<<<<< HEAD
-import { Webhook } from "svix"; // Assuming you're using svix for Clerk webhooks
-=======
 import { Webhook } from "svix";
 import { Purchase } from "../models/Purchase.js";
 import Course from "../models/Course.js";
->>>>>>> da93f25 (add)
+
 
 // Clerk Webhook
 export const clerkWebhooks = async (req, res) => {
@@ -57,12 +54,7 @@ export const clerkWebhooks = async (req, res) => {
         break;
     }
   } catch (error) {
-<<<<<<< HEAD
     res.json({ success: false, message: error.message }); // fixed typo `sucess` to `success`
-  }
-};
-=======
-    res.json({ success: false, message: error.message });
   }
 };
 
@@ -132,6 +124,5 @@ export const stripeWebhooks = async (request, response) => {
       console.log(`Unhandled event type: ${event.type}`);
   }
 
-  res.json({ received: true });
+  response.json({ received: true });
 };
->>>>>>> da93f25 (add)
