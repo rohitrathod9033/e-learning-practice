@@ -3,7 +3,7 @@ import Course from "../models/Course.js";
 import { v2 as cloudinary } from "cloudinary";
 import User from "../models/User.js";
 
-// Update Role to Educator..
+// Update Role to Educator.....
 export const updateRoleToEducator = async (req, res) => {
   try {
     const userId = req.auth.userId;
