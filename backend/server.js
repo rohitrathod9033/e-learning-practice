@@ -9,7 +9,7 @@ import connectCloudinary from './configs/cloudinary.js'
 import courseRouter from './routes/courseRoute.js';
 import userRouter from './routes/userRoutes.js';
 
-// Initailize Express
+// Initailize Express.....
 const app = express();
 
 // Connect MongoDB
