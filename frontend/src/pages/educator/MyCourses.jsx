@@ -1,19 +1,31 @@
 import React, { useContext, useState, useEffect } from "react";
 import Loading from "../../components/student/Loading";
 import { AppContext } from "../../context/AppContext";
+import axios from "axios";
 
 const MyCourses = () => {
-  const { currency, allCourses } = useContext(AppContext);
+  const { currency, backendUrl, isEducator, getToken } = useContext(AppContext);
 
   const [courses, setCourses] = useState(null);
 
   const fetchEducatorCourses = async () => {
-    setCourses(allCourses);
+    try {
+      const token = await getToken();
+      const { data } = await axios.get(backendUrl + "/api/educator/courses", {
+        headers: { Authorization: `Bearer${token}` },
+      });
+
+      data.success && setCourses(data.courses);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   useEffect(() => {
-    fetchEducatorCourses();
-  }, []);
+    if (isEducator) {
+      fetchEducatorCourses();
+    }
+  }, [isEducator]);
 
   return courses ? (
     <div className="min-h-screen flex flex-col justify-between">
@@ -25,10 +37,14 @@ const MyCourses = () => {
           <table className="md:table-auto table-fixed w-full">
             <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left">
               <tr>
-                <th className="px-4 py-3 font-semibold truncate">All Courses</th>
+                <th className="px-4 py-3 font-semibold truncate">
+                  All Courses
+                </th>
                 <th className="px-4 py-3 font-semibold truncate">Earnings</th>
                 <th className="px-4 py-3 font-semibold truncate">Students</th>
-                <th className="px-4 py-3 font-semibold truncate">Published On</th>
+                <th className="px-4 py-3 font-semibold truncate">
+                  Published On
+                </th>
               </tr>
             </thead>
             <tbody className="text-sm text-gray-500">
