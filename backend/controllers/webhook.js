@@ -123,5 +123,5 @@ export const stripeWebhooks = async (request, response) => {
       console.log(`Unhandled event type: ${event.type}`);
   }
 
-  res.json({ received: true });
+  response.json({ received: true });
 };
