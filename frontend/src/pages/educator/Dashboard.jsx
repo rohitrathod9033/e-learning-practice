@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import { dummyDashboardData, assets } from "../../assets/assets";
 import Loading from "../../components/student/Loading";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 const Dashboard = () => {
@@ -10,8 +11,8 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const tokem = await getToken()
-      const {data} = await axios.get(backendUrl + '/api/educator/dashboard', {headers: {Authorization: `Bearer${token}`}})
+      const token = await getToken()
+      const {data} = await axios.get(backendUrl + '/api/educator/dashboard', {headers: {Authorization: `Bearer ${token}`}})
 
       if(data.success) {
         setDashboardData(data.dashboardData)
