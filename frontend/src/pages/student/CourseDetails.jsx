@@ -45,7 +45,13 @@ const CourseDetails = () => {
         }
         const token = await getToken()
 
-        const {data} = await axios.post(backendUrl + '/api/user/purchase',{courseData._id}, {headers: {Authorization: `Bearer ${token}`}})
+        // const {data} = await axios.post(backendUrl + '/api/user/purchase',{courseData._id}, {headers: {Authorization: `Bearer ${token}`}})
+        const { data } = await axios.post(
+        backendUrl + '/api/user/purchase',
+        { courseId: courseData._id },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
 
         if (data.success) {
           const {session_url} = data
@@ -102,7 +108,7 @@ const CourseDetails = () => {
           <p>{courseData.enrolledStudents.length} {courseData.enrolledStudents.length > 1 ? 'Students' : 'Student'}</p>
           </div>
 
-          <p className="text-sm">Course proivde by <span className="text-blue-600 underline">{courseData.educator.name}</span></p>
+          <p className="text-sm">Course proivde by {' '} <span className="text-blue-600 underline">{courseData?.educator?.name}</span></p>
 
           <div className="p-8 text-gray-800"> 
             <h2 className="text-xl font-semibold">Course Structure</h2>

@@ -13,7 +13,8 @@ const CourseCard = ({course}) => {
       <img className="w-full" src={course.courseThumbnail} alt="" />
       <div className=" p-3 text-left">
         <h3 className=" text-base font-semibold ">{course.courseTitle}</h3>
-        <p className=" text-gray-500">{course.educator.name}</p>
+        {/* Use a conditional check */}
+        <p className=" text-gray-500">{course.educator ? course.educator.name : ''}</p>
         <div className="flex items-center space-x-2">
           <p>{calculateRating(course)}</p>
 
@@ -21,11 +22,12 @@ const CourseCard = ({course}) => {
 
           <div className="flex">
             {[...Array(5)].map((_, i) => (
-              <img key={i} src={i < Math.floor(calculateRating(course)) ? assets.star : assets.star_blank } alt="" 
+              <img key={i} src={i < Math.floor(calculateRating(course)) ? assets.star : assets.star_blank } alt=""
               className="w-3.5 h-3.5"/>
             ))}
-          </div>  
-          <p className="text-gray-500">{course.courseRatings.length}</p>
+          </div>
+          {/* This line is already using optional chaining, which is good */}
+          <p className="text-gray-500">{course.educator?.name}</p>
         </div>
         <p className="text-base font-semibold text-gray-800">{currency}
           {(course.coursePrice - course.discount * course.coursePrice / 100).toFixed(2)}</p>
