@@ -102,7 +102,7 @@ export const purchaseCourse = async (req, res) => {
 
 
 
-// Update User Course Progress
+// Update User Course Progress.....
 export const updateUserCourseProgress = async (req, res) => {
   try {
     const userId = req.auth.userId;
