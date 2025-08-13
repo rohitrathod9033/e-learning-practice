@@ -4,7 +4,7 @@ import { Purchase } from "../models/Purchase.js";
 import Course from "../models/Course.js";
 import { CourseProgress } from "../models/CourseProgress.js";
 
-// Get User Data
+// Get User Data...
 export const getUserData = async (req, res) => {
   try {
     const userId = req.auth.userId;
