@@ -141,7 +141,7 @@ const CourseDetails = () => {
                               <p onClick={() => setPlayerData({
                                 videoId: lecture.lectureUrl.split('/').pop()
                               })} 
-                              className="text-blue-500 cursor-pointer">Preview</p>}
+                              className="text-blue-500 cursor-pointer">Preview </p>}
                               <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, {units: ['h', 'm']})}</p>
                             </div>
                           </div>
@@ -165,6 +165,7 @@ const CourseDetails = () => {
 
 
       {/* Right Column  */}
+      {/* Enrolled Section  */}
 
         <div className='max-w-course-card z-10 shadow-custom-card rounded-t md:rounded-none overflow-hidden bg-white min-w-[300px] sm:min-w-[420px]'>
 
@@ -207,7 +208,7 @@ const CourseDetails = () => {
               <div className="h-4 w-px bg-gray-500/40"></div>
               <div className=" flex items-center gap-1">
                 <img src={assets.lesson_icon} alt="time-clock-icon" />
-                <p>{calculateNoOfLectures(courseData)} Lessons</p>
+                <p>{calculateNoOfLectures(courseData)} Lessons </p>
               </div>
 
             </div>
