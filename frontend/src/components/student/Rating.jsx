@@ -22,7 +22,7 @@ const Rating = ({initialRating, onRate}) => {
         return (
           <span
             key={index}
-            className={`text-x1 sm:text-2x1 cursor-pointer transition-colors ${starValue <= rating} ? ' text-yellow-500' : ' text-gray-400' `}
+            className={`text-xl sm:text-2xl cursor-pointer transition-colors ${starValue <= rating ? 'text-yellow-500' : 'text-gray-400'}`}
             onClick={() => {handleRating(starValue)}}>
             &#9733;
           </span>
