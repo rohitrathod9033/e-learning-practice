@@ -46,7 +46,7 @@ const StudentEnrolled = () => {
             </tr>
           </thead>
           <tbody>
-            {enrolledStudents.map((item, index) => (
+            {dummyStudentEnrolled.map((item, index) => (
               <tr key={index} className="border-b border-gray-500/20">
                 <td className="px-4 py-3 text-center hidden sm:table-cell">
                   {index + 1}
