@@ -50,7 +50,7 @@ const Dashboard = () => {
             <img src={assets.appointments_icon} alt="patients_icon" />
             <div>
               <p className="text-2xl font-medium text-gray-600">
-                {dashboardData.totalCourses}
+                {dummyDashboardData.totalCourses}
               </p>
               <p className="text-base text-gray-500">Total Enrollment</p>
             </div>
@@ -61,7 +61,7 @@ const Dashboard = () => {
             <img src={assets.earning_icon} alt="patients_icon" />
             <div>
               <p className="text-2xl font-medium text-gray-600">{currency}
-                {dashboardData.totalEarnings}
+                {dummyDashboardData.totalEarnings}
               </p>
               <p className="text-base text-gray-500">Total Enrolments</p>
             </div>
@@ -83,7 +83,7 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody className="text-sm text-gray-500">
-                {dashboardData.enrolledStudentsData.map((item, index) => (
+                {dummyDashboardData.enrolledStudentsData.map((item, index) => (
                   <tr key={index} className="border-b border-gray-500/20">
                     <td className="px-4 py-3 text-center hidden sm:table-cell">{index + 1}</td>
                     <td className="px-4 md:px-4 py-3 flex items-center space-x-3">
