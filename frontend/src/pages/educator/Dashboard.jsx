@@ -38,7 +38,7 @@ const Dashboard = () => {
           <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md">
             <img src={assets.patients_icon} alt="patients_icon" />
             <div>
-              <p className="text-2x1 font-medium text-gray-600">
+              <p className="text-2xl font-medium text-gray-600">
                 {dashboardData.enrolledStudentsData.length}
               </p>
               <p className="text-base text-gray-500">Total Enrolments</p>
@@ -49,10 +49,10 @@ const Dashboard = () => {
           <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md">
             <img src={assets.appointments_icon} alt="patients_icon" />
             <div>
-              <p className="text-2x1 font-medium text-gray-600">
+              <p className="text-2xl font-medium text-gray-600">
                 {dashboardData.totalCourses}
               </p>
-              <p className="text-base text-gray-500">Total Enrolments</p>
+              <p className="text-base text-gray-500">Total Enrollment</p>
             </div>
           </div>
 
@@ -60,7 +60,7 @@ const Dashboard = () => {
           <div className="flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md">
             <img src={assets.earning_icon} alt="patients_icon" />
             <div>
-              <p className="text-2x1 font-medium text-gray-600">{currency}
+              <p className="text-2xl font-medium text-gray-600">{currency}
                 {dashboardData.totalEarnings}
               </p>
               <p className="text-base text-gray-500">Total Enrolments</p>
@@ -73,7 +73,7 @@ const Dashboard = () => {
         {/* Latest Enrollment Table  */}
         <div>
           <h2 className="pb-4 text-lg font-medium">Latest Enrolments</h2>
-          <div className="flex flex-col items-center max-w-4x1 w-full overflow-hidden rounded-md bg-white border border-gray-500/20">
+          <div className="flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20">
             <table className="table-auto w-full overflow-hidden">
               <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left">
                 <tr>

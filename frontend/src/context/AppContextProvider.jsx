@@ -70,7 +70,7 @@ export const AppContextProvider = ({ children }) => {
       return 0;
     }
     let totalRating = 0
-    course. courseRatings. forEach(rating => {
+    course.courseRatings. forEach(rating => {
       totalRating += rating.rating
     })
     return Math.floor(totalRating / course.courseRatings.length)
